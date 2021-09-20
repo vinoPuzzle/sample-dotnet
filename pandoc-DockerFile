@@ -1,0 +1,6 @@
+FROM 'debian:buster-slim'
+RUN mkdir /documents
+RUN apt update -y && apt install -y pandoc texlive
+WORKDIR /documents
+ENTRYPOINT ["/usr/bin/pandoc"]
+CMD ["--help"]
